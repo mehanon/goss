@@ -1,0 +1,6 @@
+.idea
+data/*
+cfg/config.yaml
+*.sql
+*.sh
+*id_ed25519*

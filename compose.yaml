@@ -1,0 +1,19 @@
+services:
+  goss-thrd-4:
+    build: .
+    restart: on-failure:10
+    env_file:
+      - path: ./.env
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: '0.95'
+          memory: '1.5G'
+    network_mode: 'host'
+    volumes:
+      - ./app/data:/app/data
+      - ./cfg:/app/cfg
+    environment:
+      - CONFIG
+      - LOCAL_TG_API
